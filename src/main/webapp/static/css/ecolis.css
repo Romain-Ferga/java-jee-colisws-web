@@ -1,0 +1,12 @@
+h1{
+	color:#408080;
+}
+
+h2{
+	color:#0000ff;
+}
+
+.error{
+	color:#ff0000;
+	text-decoration: blink;
+}
