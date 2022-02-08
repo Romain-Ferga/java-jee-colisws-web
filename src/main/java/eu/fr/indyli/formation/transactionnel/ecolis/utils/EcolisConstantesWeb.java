@@ -8,16 +8,22 @@ package eu.fr.indyli.formation.transactionnel.ecolis.utils;
  */
 public class EcolisConstantesWeb {
 
-  public final class EcolisConstantesModelAttribute {
-    public final static String LOGIN_MODEL_ATTR_KEY = "loginModelAttribute";
-    public final static String ALERTE_MODEL_ATTR_KEY = "alerteModelAttribute";
-    public final static String DISP_ALERTE_MODEL_ATTR_KEY = "listeAlerteModelAttribute";
-  }
+	public final class EcolisConstantesModelAttribute {
+		public final static String LOGIN_MODEL_ATTR_KEY = "loginModelAttribute";
+		public final static String ALERTE_MODEL_ATTR_KEY = "alerteModelAttribute";
+		public final static String DISP_ALERTE_MODEL_ATTR_KEY = "listeAlerteModelAttribute";
+	}
 
-  public final class EcolisConstantesURI {
-    public final static String PATH_USER = "/users";
-    public final static String PATH_USER_ID = "/{userId}";
-    public final static String PATH_MESSAGE = "/messages";
-    public final static String PATH_USER_MESSAGE = "/users/{email:.+}/";
-  }
+	public final class EcolisConstantesURI {
+
+		public final static String PATH_USER = "/users";
+		public final static String PATH_USER_ID = "/{userId}";
+		public final static String PATH_MESSAGE = "/messages";
+		public final static String PATH_USER_MESSAGE = "/users/{email:.+}/";
+
+		public final static String PATH_ALERTE = "/alertes";
+		public final static String PATH_ALERTE_ID = "/{alertId}";
+//	    public final static String PATH_MESSAGE = "/messages";
+//	    public final static String PATH_USER_MESSAGE = "/alerts/{email:.+}/";
+	}
 }
