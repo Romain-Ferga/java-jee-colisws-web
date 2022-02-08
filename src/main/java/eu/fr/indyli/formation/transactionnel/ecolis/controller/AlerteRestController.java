@@ -89,6 +89,56 @@ public class AlerteRestController {
 
 	}
 
+	@PostMapping(value = EcolisConstantesURI.PATH_ALERTE_ID, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> updateVilleDepartVilleArrivee(@RequestBody Integer alertId,
+			@RequestBody String villeDepart, @RequestBody String villeArrivee) throws EcolisBusinessException {
+
+		Alerte alert = this.alertService.findById(alertId);
+
+		alert.setVilleDepart(villeDepart);
+
+		alert.setVilleArrivee(villeArrivee);
+
+		this.alertService.createUpdateEntity(alert);
+
+		PojoModelAlerteForm pojo = this.modelMapper.map(alert, PojoModelAlerteForm.class);
+
+		return ResponseEntity.ok(pojo);
+
+	}
+
+//	@PostMapping(value = EcolisConstantesURI.PATH_ALERTE_ID, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Object> updateVilleDepart(@RequestBody Integer alertId, @RequestBody String villeDepart)
+//			throws EcolisBusinessException {
+//
+//		Alerte alert = this.alertService.findById(alertId);
+//
+//		alert.setVilleDepart(villeDepart);
+//
+//		this.alertService.createUpdateEntity(alert);
+//
+//		PojoModelAlerteForm pojo = this.modelMapper.map(alert, PojoModelAlerteForm.class);
+//
+//		return ResponseEntity.ok(pojo);
+//
+//	}
+//
+//	@PostMapping(value = EcolisConstantesURI.PATH_ALERTE_ID, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Object> updateVilleArrivee(@RequestBody Integer alertId, @RequestBody String villeArrivee)
+//			throws EcolisBusinessException {
+//
+//		Alerte alert = this.alertService.findById(alertId);
+//
+//		alert.setVilleArrivee(villeArrivee);
+//
+//		this.alertService.createUpdateEntity(alert);
+//
+//		PojoModelAlerteForm pojo = this.modelMapper.map(alert, PojoModelAlerteForm.class);
+//
+//		return ResponseEntity.ok(pojo);
+//
+//	}
+
 	private List<PojoModelAlerteForm> convertToPojo(List<Alerte> entityMsgList) {
 
 		List<PojoModelAlerteForm> msgPojoList = new ArrayList<PojoModelAlerteForm>();
